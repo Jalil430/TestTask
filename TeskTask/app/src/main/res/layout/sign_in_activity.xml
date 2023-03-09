@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootSignIn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ui.SignInActivity">
@@ -10,120 +11,261 @@
         android:id="@+id/tvSignIn"
         android:layout_width="@dimen/_115sdp"
         android:layout_height="@dimen/_38sdp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/_98sdp"
-        android:text="@string/sign_in"
-        android:textAppearance="@style/sign_in"
         android:gravity="center_horizontal|top"
-        />
+        android:text="Sign in"
+        android:textAppearance="@style/sign_in"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etFirstName"
         android:layout_width="@dimen/_228sdp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_181sdp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/rounded_edittext_background"
         android:ems="10"
         android:gravity="center"
         android:hint="First name"
+        android:textColorHint="@color/hint_foreground_material_light"
         android:inputType="textPersonName"
         android:padding="@dimen/_4sdp"
         android:textSize="@dimen/_11sdp"
-        tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignIn"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etLastName"
         android:layout_width="@dimen/_228sdp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_230sdp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/rounded_edittext_background"
         android:ems="10"
         android:gravity="center"
         android:hint="Last name"
+        android:textColorHint="@color/hint_foreground_material_light"
         android:inputType="textPersonName"
         android:padding="@dimen/_4sdp"
         android:textSize="@dimen/_11sdp"
-        tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="@dimen/_228sdp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_279sdp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/rounded_edittext_background"
         android:ems="10"
         android:gravity="center"
         android:hint="Email"
+        android:textColorHint="@color/hint_foreground_material_light"
         android:inputType="textEmailAddress"
         android:padding="@dimen/_4sdp"
         android:textSize="@dimen/_11sdp"
-        tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLastName"
+        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="@dimen/_228sdp"
-        android:layout_height="@dimen/_42sdp"
-        android:textColor="@color/grey"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/blue"
+        android:textSize="@dimen/_12sdp"
         android:text="Sign in"
         android:textAllCaps="false"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/_328sdp"
-        android:backgroundTint="@color/blue"
+        android:textColor="@color/grey"
         app:cornerRadius="15dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
     <TextView
         android:id="@+id/tvHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnSignIn"
-        android:layout_alignStart="@id/btnSignIn"
+        android:layout_marginTop="@dimen/_5sdp"
         android:padding="@dimen/_4sdp"
         android:text="Already have an account?"
         android:textSize="@dimen/_9sdp"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
         tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/btnHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btnSignIn"
-        android:layout_toEndOf="@id/tvHaveAccount"
+        android:layout_marginTop="@dimen/_5sdp"
         android:padding="@dimen/_4sdp"
-        android:textStyle="bold"
         android:text="Log in"
         android:textColor="@color/blue"
         android:textSize="@dimen/_9sdp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tvHaveAccount"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
         tools:ignore="TextSizeCheck" />
 
     <ImageView
         android:id="@+id/ivGoogleSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_442sdp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHaveAccount"
         app:srcCompat="@drawable/google_sign_in" />
 
     <ImageView
         android:id="@+id/ivAppleSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@id/ivGoogleSignIn"
-        android:layout_marginTop="@dimen/_479sdp"
-        android:padding="@dimen/_2sdp"
+        android:layout_marginTop="35dp"
+        android:padding="@dimen/_3sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivGoogleSignIn"
+        app:layout_constraintVertical_bias="0.006"
         app:srcCompat="@drawable/apple_sign_in" />
 
-</RelativeLayout>
+    <!--    Relative layout variant-->
+    <!--    <TextView
+            android:id="@+id/tvSignIn"
+            android:layout_width="@dimen/_115sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_98sdp"
+            android:text="@string/sign_in"
+            android:textAppearance="@style/sign_in"
+            android:gravity="center_horizontal|top"
+            />
+
+        <EditText
+            android:id="@+id/etFirstName"
+            android:layout_width="@dimen/_228sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_181sdp"
+            android:background="@drawable/rounded_edittext_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="First name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
+            />
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="@dimen/_228sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_230sdp"
+            android:background="@drawable/rounded_edittext_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Last name"
+            android:inputType="textPersonName"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
+            />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="@dimen/_228sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_279sdp"
+            android:background="@drawable/rounded_edittext_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/_4sdp"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
+            />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="@dimen/_228sdp"
+            android:layout_height="@dimen/_42sdp"
+            android:textColor="@color/grey"
+            android:text="Sign in"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_328sdp"
+            android:backgroundTint="@color/blue"
+            app:cornerRadius="15dp"
+            />
+
+        <TextView
+            android:id="@+id/tvHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSignIn"
+            android:layout_alignStart="@id/btnSignIn"
+            android:padding="@dimen/_4sdp"
+            android:text="Already have an account?"
+            android:textSize="@dimen/_9sdp"
+            tools:ignore="TextSizeCheck"
+            />
+
+        <TextView
+            android:id="@+id/btnHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnSignIn"
+            android:layout_toEndOf="@id/tvHaveAccount"
+            android:padding="@dimen/_4sdp"
+            android:textStyle="bold"
+            android:text="Log in"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_9sdp"
+            tools:ignore="TextSizeCheck"
+            />
+
+        <ImageView
+            android:id="@+id/ivGoogleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_442sdp"
+            app:srcCompat="@drawable/google_sign_in"
+            />
+
+        <ImageView
+            android:id="@+id/ivAppleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@id/ivGoogleSignIn"
+            android:layout_marginTop="@dimen/_479sdp"
+            android:padding="@dimen/_2sdp"
+            app:srcCompat="@drawable/apple_sign_in"
+            />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
