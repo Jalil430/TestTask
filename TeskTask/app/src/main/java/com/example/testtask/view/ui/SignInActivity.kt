@@ -66,10 +66,12 @@ class SignInActivity : AppCompatActivity() {
         val lastName = binding.etLastName.text.toString()
         val email = binding.etEmail.text.toString()
 
-        if (userDao?.login(firstName, email) == true) {
-            Toast.makeText(this@SignInActivity, "This account already exists, log in", Toast.LENGTH_SHORT).show()
-        } else {
-            CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
+            if (userDao?.login(firstName, email) == true) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(this@SignInActivity, "This account already exists, log in", Toast.LENGTH_SHORT).show()
+                }
+            } else {
                 userDao?.insertUser(User(0, firstName, lastName, email))
 
                 /*val intent = Intent(this, page1Activity::class.java)

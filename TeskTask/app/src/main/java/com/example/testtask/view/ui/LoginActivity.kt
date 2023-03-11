@@ -38,13 +38,15 @@ class LoginActivity : AppCompatActivity() {
         val firstName = binding.etFirstName2.text.toString()
         val email = binding.etPassword.text.toString()
 
-        if (userDao?.login(firstName, email) == false) {
-            Toast.makeText(this@LoginActivity, "Incorrect Name or Email", Toast.LENGTH_SHORT).show()
-        } else {
-            CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
+            if (userDao?.login(firstName, email) == false) {
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(this@LoginActivity, "Incorrect Name or Email", Toast.LENGTH_SHORT).show()
+                }
+            } else {
                 /*val intent = Intent(this, page1Activity::class.java)
-                startActivity(intent)
-                finish()*/
+                  startActivity(intent)
+                  finish()*/
             }
         }
     }
